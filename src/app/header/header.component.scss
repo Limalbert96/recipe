@@ -4,3 +4,5 @@
 .navbar .btn-group .dropdown-menu a:active {
     color: #fff !important;
 }
+
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{background-color: pink !important;}

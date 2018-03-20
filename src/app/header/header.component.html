@@ -1,9 +1,9 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo" >
 
   <!-- Navbar brand -->
   <logo>
-    <a class="navbar-brand" href="#">The Ulimate Recipe Book</a>
+    <a class="navbar-brand" href="#">The Ultimate Recipe Book</a>
   </logo>
 
   <!-- Collapsible content -->
@@ -20,16 +20,18 @@
       <li class="nav-item">
         <a class="nav-link waves-light" mdbRippleRadius>Shopping List</a>
       </li>
-
+    </ul>
+    
+    <ul class="navbar-nav">
       <!-- Dropdown -->
-      <li class="nav-item dropdown btn-group" dropdown>
+      <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
           Manage
           <span class="caret"></span>
         </a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbRippleRadius href="#">Save Data</a>
-          <a class="dropdown-item waves-light" mdbRippleRadius href="#">Fetch Data</a>
+          <a class="dropdown-item" mdbRippleRadius href="#">Save Data</a>
+          <a class="dropdown-item" mdbRippleRadius href="#">Fetch Data</a>
         </div>
       </li>
 
