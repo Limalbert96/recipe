@@ -2,26 +2,41 @@
 
 <hr>
 
-<div class="row" style="padding-left:15px">
-    <a href="#" *ngFor="let recipe of recipes">
-        <div class="card card-cascade wider reverse my-4 mr-1">
-            <div class="card-body text-center">
+<div class="container-fluid">
+    <div class="row" *ngFor="let recipe of recipes; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }">
 
-                <!--Title-->
-                <h4 class="card-title">
-                    <strong>{{ recipe.name }}</strong>
-                </h4>
+        <!--<div class="col-md-12 even" id="left" > 
+        <div class="col-md-6" id="left">-->
+            <div class="card card-cascade wider reverse my-4 mr-1">
+                <div class="card-body text-center">
 
-                <img [src]="recipe.imagePath" alt="{{ recipe.name }}" 
-                class="img-fluid" style="height:15vh">
+                    <!--Title-->
+                    <h4 class="card-title">
+                        <strong>{{ recipe.name }}</strong>
+                    </h4>
 
-                <br> <br>
-                
-                <p class="card-text">{{ recipe.description }} </p>
+                    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
+
+                    <p class="card-text">{{ recipe.description }} </p>
+                </div>
             </div>
-        </div>
-    </a>
+        <!--</div>-->
+
+        <!--<div class="col-md-6 odd" id="right" >
+        <div class="col-md-6" id="right">
+            <div class="card card-cascade wider reverse my-4 mr-1">
+                <div class="card-body text-center">
+
+                    <h4 class="card-title">
+                        <strong>{{ recipe.name }}</strong>
+                    </h4>
+
+                    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
+
+                    <p class="card-text">{{ recipe.description }} </p>
+                </div>
+            </div>
+        </div>-->
+    </div>
 </div>
 <app-recipe-item></app-recipe-item>
-
-
