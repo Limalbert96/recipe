@@ -4,6 +4,7 @@
 <hr>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="container-fluid">
     <div class="row" *ngFor="let recipe of recipes; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }">
 
@@ -60,10 +61,30 @@
 >>>>>>> cb416e4c2256ca8415d0472a07d0bea0aec04285
                 <p class="card-text">{{ recipe.description }} </p>
             </div>
+=======
+<div class="row" style="padding-left:15px">
+    <a href="#" *ngFor="let recipe of recipes">
+        <div class="card card-cascade wider reverse my-4 mr-1">
+            <div class="card-body text-center">
+
+                <!--Title-->
+                <h4 class="card-title">
+                    <strong>{{ recipe.name }}</strong>
+                </h4>
+
+                <img [src]="recipe.imagePath" alt="{{ recipe.name }}" 
+                class="img-fluid" style="height:15vh">
+
+                <br> <br>
+                
+                <p class="card-text">{{ recipe.description }} </p>
+            </div>
+>>>>>>> parent of 33d5b6c... frontend update
         </div>
     </a>
 </div>
 <app-recipe-item></app-recipe-item>
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 2b2cc5e14b58e8b820af09cd7433c9d8b98e06ad
 
@@ -76,9 +97,11 @@
                     <h4 class="card-title">
                         <strong>{{ recipe.name }}</strong>
                     </h4>
+=======
+>>>>>>> parent of 33d5b6c... frontend update
 
-                    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
 
+<<<<<<< HEAD
                     <p class="card-text">{{ recipe.description }} </p>
                 </div>
             </div>
@@ -90,3 +113,5 @@
 =======
 >>>>>>> cb416e4c2256ca8415d0472a07d0bea0aec04285
 >>>>>>> 2b2cc5e14b58e8b820af09cd7433c9d8b98e06ad
+=======
+>>>>>>> parent of 33d5b6c... frontend update
