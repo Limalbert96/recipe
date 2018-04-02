@@ -1,42 +1,13 @@
-<button type="button" class="btn btn-primary waves-light" mdbRippleRadius>New Recipe</button>
-
+<div class="container-fluid">
+    <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>New Recipe</button>
+</div>
 <hr>
 
 <div class="container-fluid">
-    <div class="row" *ngFor="let recipe of recipes; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }">
 
-        <!--<div class="col-md-12 even" id="left" > 
-        <div class="col-md-6" id="left">-->
-            <div class="card card-cascade wider reverse my-4 mr-1">
-                <div class="card-body text-center">
 
-                    <!--Title-->
-                    <h4 class="card-title">
-                        <strong>{{ recipe.name }}</strong>
-                    </h4>
+    <app-recipe-item *ngFor="let recipeElement of recipes; 
+let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }" [recipe]="recipeElement" (recipeSelected)="onRecipeSelected(recipeElement)">
 
-                    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
-
-                    <p class="card-text">{{ recipe.description }} </p>
-                </div>
-            </div>
-        <!--</div>-->
-
-        <!--<div class="col-md-6 odd" id="right" >
-        <div class="col-md-6" id="right">
-            <div class="card card-cascade wider reverse my-4 mr-1">
-                <div class="card-body text-center">
-
-                    <h4 class="card-title">
-                        <strong>{{ recipe.name }}</strong>
-                    </h4>
-
-                    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
-
-                    <p class="card-text">{{ recipe.description }} </p>
-                </div>
-            </div>
-        </div>-->
-    </div>
+    </app-recipe-item>
 </div>
-<app-recipe-item></app-recipe-item>

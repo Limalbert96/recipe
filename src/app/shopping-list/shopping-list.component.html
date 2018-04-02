@@ -1,6 +1,8 @@
 <div class="container fluid">
   <div class="col-xs-12">
-    <app-shopping-edit></app-shopping-edit>
+    <app-shopping-edit (ingredientAdded)="onIngredientAdded($event)">      
+    </app-shopping-edit>
+
     <hr>
     <ul class="list-group">
       <a class="list-group-item d-flex justify-content-between align-items-center" 

@@ -1,5 +1,5 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo" >
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
 
   <!-- Navbar brand -->
   <logo>
@@ -11,17 +11,20 @@
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link waves-light" mdbRippleRadius>Recipes
+
+      <!--<li class="nav-item active"> -->
+      <li class="nav-item">
+        <a (click)="onSelect('recipe')" class="nav-link waves-light" mdbRippleRadius> Recipes
           <span class="sr-only">(current)</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbRippleRadius>Shopping List</a>
+        <a (click)="onSelect('shopping-list')" class="nav-link waves-light" mdbRippleRadius> Shopping List
+        </a>
       </li>
     </ul>
-    
+
     <ul class="navbar-nav">
       <!-- Dropdown -->
       <li class="nav-item dropdown" dropdown>
