@@ -11,10 +11,8 @@
 <!--Display array of recipe data-->
 <div class="container-fluid">
     <app-recipe-item 
-    *ngFor="let recipeElement of recipes; let even = even; let odd = odd" 
-    [ngClass]="{ odd: odd, even: even }" 
-    [recipe]="recipeElement" 
-    (recipeSelected)="onRecipeSelected(recipeElement)">
+    *ngFor="let recipeElement of recipes" 
+    [recipe]="recipeElement">
 
     </app-recipe-item>
 </div>

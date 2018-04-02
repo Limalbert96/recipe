@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Recipe} from '../recipe.model'; //manage array of recipes
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,22 +8,12 @@ import {Recipe} from '../recipe.model'; //manage array of recipes
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
-  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+  recipes: Recipe[];
 
-  recipes: Recipe[] = [
-    new Recipe('Recipe 1', ' this is a test 1', 'https://static01.nyt.com/images/2016/02/16/dining/16COOKING-SALMONWITHLEEKS2/16COOKING-SALMONWITHLEEKS2-articleLarge.jpg'),
-    new Recipe('Recipe 2', ' this is a test 2', 'https://static01.nyt.com/images/2016/02/16/dining/16COOKING-SALMONWITHLEEKS2/16COOKING-SALMONWITHLEEKS2-articleLarge.jpg'),
-    new Recipe('Recipe 3', ' this is a test 3', 'https://static01.nyt.com/images/2016/02/16/dining/16COOKING-SALMONWITHLEEKS2/16COOKING-SALMONWITHLEEKS2-articleLarge.jpg'),
-    new Recipe('Recipe 4', ' this is a test 4', 'https://static01.nyt.com/images/2016/02/16/dining/16COOKING-SALMONWITHLEEKS2/16COOKING-SALMONWITHLEEKS2-articleLarge.jpg'),
-    new Recipe('Recipe 5', ' this is a test 5', 'https://static01.nyt.com/images/2016/02/16/dining/16COOKING-SALMONWITHLEEKS2/16COOKING-SALMONWITHLEEKS2-articleLarge.jpg'),
-  ];
-  constructor() { }
+  constructor(private recipeService: RecipeService) { } //inject data
 
   ngOnInit() {
-  }
-
-  onRecipeSelected(recipe: Recipe){
-    this.recipeWasSelected.emit(recipe);
+    this.recipes = this.recipeService.getRecipes(); //get copy
   }
 
 }
