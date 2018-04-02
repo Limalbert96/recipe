@@ -1,3 +1,4 @@
+<!-- Recipe items card deck-->
 <a href=# class="row" (click)="onSelected()">
 
   <!--<div class="col-md-12 even" id="left" > 
@@ -5,13 +6,15 @@
   <div class="card card-cascade wider reverse my-4 mr-1">
     <div class="card-body text-center">
 
-      <!--Title-->
+      <!--Recipe items card deck show name/ title-->
       <h4 class="card-title">
         <strong>{{ recipe.name }}</strong>
       </h4>
 
+      <!--Recipe items card deck show picture, name if pic not shown-->
       <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
 
+      <!--Recipe items card deck show description-->
       <p class="card-text">{{ recipe.description }} </p>
     </div>
   </div>

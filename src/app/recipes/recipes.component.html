@@ -1,13 +1,22 @@
+<!--Parent component for recipes -->
 <div class="row">
+
+  <!-- Show recipe cards-->
   <div class="col-md-5" style="padding-left:0px !important">
     <app-recipe-list (recipeWasSelected)="selectedRecipe = $event"> </app-recipe-list>
   </div>
 
   <div class="col-md-1"></div>
 
+  <!-- Show Recipe details -->
   <div class="col-md-6" style="padding-left:0px !important">
-    <app-recipe-detail *ngIf="selectedRecipe; else infoText"
-    [recipe]="selectedRecipe"></app-recipe-detail>
+    <app-recipe-detail 
+    *ngIf="selectedRecipe; else infoText"
+    [recipe]="selectedRecipe">
+    
+    </app-recipe-detail>
+    
+    <!--Reference when none of the card has been selected-->
     <ng-template #infoText>
       <br>
       <p> Please select a Recipe!</p>

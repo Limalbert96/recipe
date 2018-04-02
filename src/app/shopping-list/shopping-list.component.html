@@ -1,9 +1,13 @@
+<!-- Shopping List parent component -->
 <div class="container fluid">
   <div class="col-xs-12">
+    <!-- Show shopping list form -->
     <app-shopping-edit (ingredientAdded)="onIngredientAdded($event)">      
     </app-shopping-edit>
 
     <hr>
+
+    <!-- Show ingredient added to shopping list -->
     <ul class="list-group">
       <a class="list-group-item d-flex justify-content-between align-items-center" 
       style="cursor: pointer" 
@@ -13,5 +17,6 @@
       </a>
     </ul>
   </div>
+  
 </div>
 <br>

@@ -1,13 +1,20 @@
+<!--New Recipe button-->
 <div class="container-fluid">
-    <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>New Recipe</button>
+    <br>
+    <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>
+        New Recipe
+    </button>
 </div>
+
 <hr>
 
+<!--Display array of recipe data-->
 <div class="container-fluid">
-
-
-    <app-recipe-item *ngFor="let recipeElement of recipes; 
-let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }" [recipe]="recipeElement" (recipeSelected)="onRecipeSelected(recipeElement)">
+    <app-recipe-item 
+    *ngFor="let recipeElement of recipes; let even = even; let odd = odd" 
+    [ngClass]="{ odd: odd, even: even }" 
+    [recipe]="recipeElement" 
+    (recipeSelected)="onRecipeSelected(recipeElement)">
 
     </app-recipe-item>
 </div>

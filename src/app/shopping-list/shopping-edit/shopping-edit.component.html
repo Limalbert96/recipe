@@ -1,9 +1,10 @@
-<hr>
-
+<br> 
+<!--Show shopping List form to add item to shopping list-->
 <div class="container-fluid">
   <form>
     <p class="h5 text-center mb-4">Shopping List</p>
 
+    <!-- Name input in the shopping list form -->
     <div class="md-form">
       <input 
       type="text" 
@@ -13,6 +14,8 @@
       #nameInput>
       <label for="orangeForm-name">Enter name</label>
     </div>
+
+    <!-- Amount input in the shopping list form -->
     <div class="md-form">
       <input 
       type="text" 
@@ -23,11 +26,26 @@
       <label for="orangeForm-email">Enter amount</label>
     </div>
 
+    <!-- Add function in the shopping list form -->
     <div class="text-center">
-      <button type="submit" class="btn btn-success waves-light" mdbRippleRadius
-      (click)="onAddItem()"> Add </button>
-      <button type="button" class="btn btn-danger waves-light" mdbRippleRadius> Delete </button>
-      <button type="button" class="btn btn-primary waves-light" mdbRippleRadius> Clear </button>
+      <button type="submit" 
+      class="btn btn-success waves-light" mdbRippleRadius
+      (click)="onAddItem()"> 
+        Add 
+      </button>
+
+      <!-- Delete function in the shopping list form -->
+      <button type="button" 
+      class="btn btn-danger waves-light" mdbRippleRadius> 
+        Delete 
+      </button>
+
+      <!-- Clear function in the shopping list form -->
+      <button type="button" 
+      class="btn btn-primary waves-light" mdbRippleRadius> 
+        Clear 
+      </button>
     </div>
+
   </form>
 </div>
