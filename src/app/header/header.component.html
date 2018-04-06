@@ -3,46 +3,34 @@
 
   <!-- Navbar brand -->
   <logo>
-    <a class="navbar-brand" href="#">The Ultimate Recipe Book</a>
+    <a routerLink="/" class="navbar-brand">The Ultimate Recipe Book</a>
   </logo>
 
   <!-- Collapsible content -->
   <links>
 
-    <!-- Have the Recipes highlighted when clicked -->
-    <ul class="navbar-nav mr-auto" *ngIf="isRecipe">
-      <li class="nav-item active" >
-        <a (click)="onSelect('recipe')" 
+    
+    <ul class="navbar-nav mr-auto">
+
+      <!-- Open the Recipes, and tab highlighted when clicked -->
+      <li routerLinkActive="active" class="nav-item" >
+        <a routerLink="/recipes"
         class="nav-link waves-light" mdbRippleRadius> 
           Recipes
           <span class="sr-only">(current)</span>
         </a>
       </li>
 
-      <li class="nav-item">
-        <a (click)="onSelect('shopping-list')" 
-        class="nav-link waves-light" mdbRippleRadius> 
-          Shopping List
-        </a>
-      </li>
-    </ul>
+      <!-- Open the Shopping List, and tab is highlighted when clicked -->
+      <li routerLinkActive="active" class="nav-item">
 
-    <!-- Have the Shopping List highlighted when clicked -->
-    <ul class="navbar-nav mr-auto" *ngIf="!isRecipe">
-      <li class="nav-item">
-        <a (click)="onSelect('recipe')" 
-        class="nav-link waves-light" mdbRippleRadius> 
-          Recipes          
-        </a>
-      </li>
-
-      <li class="nav-item active">
-        <a (click)="onSelect('shopping-list')" 
+        <a routerLink="/shopping-list"
         class="nav-link waves-light" mdbRippleRadius> 
           Shopping List
           <span class="sr-only">(current)</span>
         </a>
       </li>
+
     </ul>
 
     <!-- Manage dropdown -->
@@ -56,8 +44,8 @@
         </a>
         
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item" mdbRippleRadius href="#">Save Data</a>
-          <a class="dropdown-item" mdbRippleRadius href="#">Fetch Data</a>
+          <a class="dropdown-item" mdbRippleRadius> Save Data </a>
+          <a class="dropdown-item" mdbRippleRadius> Fetch Data </a>
         </div>
       </li>
     </ul>

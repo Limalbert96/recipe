@@ -1,38 +1,19 @@
-<!-- Recipe items card deck-->
-<a href=# class="row" (click)="onSelected()">
+<!-- Recipe items list-->
+<div class="list-group" >
+    <a class="list-group-item" [routerLink]="[index]" routerLinkActive="active">
+        <div >
 
-  <!--<div class="col-md-12 even" id="left" > 
-  <div class="col-md-6" id="left">-->
-  <div class="card card-cascade wider reverse my-4 mr-1">
-    <div class="card-body text-center">
+            <!--Recipe items show name/ title-->
+            <h4 class="list-group-item-heading"> {{ recipe.name }} </h4>
 
-      <!--Recipe items card deck show name/ title-->
-      <h4 class="card-title">
-        <strong>{{ recipe.name }}</strong>
-      </h4>
-
-      <!--Recipe items card deck show picture, name if pic not shown-->
-      <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
-
-      <!--Recipe items card deck show description-->
-      <p class="card-text">{{ recipe.description }} </p>
-    </div>
-  </div>
-  <!--</div>-->
-
-  <!--<div class="col-md-6 odd" id="right" >
-    <div class="col-md-6" id="right">
-        <div class="card card-cascade wider reverse my-4 mr-1">
-            <div class="card-body text-center">
-
-                <h4 class="card-title">
-                    <strong>{{ recipe.name }}</strong>
-                </h4>
-
-                <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
-
-                <p class="card-text">{{ recipe.description }} </p>
-            </div>
+            <!--Recipe items card deck show description-->
+            <h5 class="list-group-item-text"> {{ recipe.description }} </h5>
         </div>
-    </div>-->
-</a>
+        
+        <div style="text-align: center;">
+            <!--Recipe items show picture, name if pic not shown-->
+            <img [src]="recipe.imagePath" alt="{{ recipe.name }}" 
+            class="img-fluid" style="max-height:100px">
+        </div>
+    </a>
+</div>

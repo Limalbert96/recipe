@@ -10,16 +10,6 @@
 
   <!-- Show Recipe details -->
   <div class="col-md-6" style="padding-left:0px !important">
-    <app-recipe-detail 
-    *ngIf="selectedRecipe; else infoText"
-    [recipe]="selectedRecipe">
-    
-    </app-recipe-detail>
-    
-    <!--Reference when none of the card has been selected-->
-    <ng-template #infoText>
-      <br>
-      <p> Please select a Recipe!</p>
-    </ng-template>
+    <router-outlet> </router-outlet>
   </div>
 </div>

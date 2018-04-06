@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-header",
@@ -8,15 +8,5 @@ import { Component, EventEmitter, Output } from "@angular/core";
 export class HeaderComponent {
   public isRecipe: boolean = true;
 
-  @Output() featureSelected = new EventEmitter<string>(); //() create object instantiation
-
-  onSelect(feature: string) {
-    this.featureSelected.emit(feature);
-
-    if (feature == "recipe") {
-      this.isRecipe = true;
-    } else {
-      this.isRecipe = false;
-    }
-  }
+  
 }

@@ -1,7 +1,8 @@
 <!--New Recipe button-->
 <div class="container-fluid">
     <br>
-    <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>
+    <button type="button" (click)="onNewRecipe()" 
+    class="btn btn-primary waves-light" mdbRippleRadius>
         New Recipe
     </button>
 </div>
@@ -11,8 +12,9 @@
 <!--Display array of recipe data-->
 <div class="container-fluid">
     <app-recipe-item 
-    *ngFor="let recipeElement of recipes" 
-    [recipe]="recipeElement">
+    *ngFor="let recipeElement of recipes; let i = index" 
+    [recipe]="recipeElement"
+    [index]="i">
 
     </app-recipe-item>
 </div>
