@@ -1,11 +1,12 @@
 <div class="container-fluid">
   <div class="col-xs-12">
     <br>
-    <form>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
 
       <div class="container-fluid">
 
-        <button type="submit" class="btn btn-success waves-light" mdbRippleRadius>
+        <button type="submit" class="btn btn-success waves-light" mdbRippleRadius
+        [disabled]="!recipeForm.valid">
           Save
         </button>
 
@@ -22,11 +23,11 @@
         <div class="col-xs-12">
           <div class="form-group text">
 
-            <label for="name" style="font-weight:bold"> 
-              Name 
+            <label for="name" style="font-weight:bold">
+              Name
             </label>
 
-            <input id="name" class="form-control z-depth-1">
+            <input id="name" class="form-control z-depth-1" formControlName="name">
 
           </div>
         </div>
@@ -37,11 +38,11 @@
         <div class="col-xs-12">
           <div class="form-group text">
 
-            <label for="imagePath" style="font-weight:bold"> 
-              Image URL 
+            <label for="imagePath" style="font-weight:bold">
+              Image URL
             </label>
 
-            <input id="imagePath" class="form-control z-depth-1">
+            <input id="imagePath" class="form-control z-depth-1" formControlName="imagePath">
 
           </div>
         </div>
@@ -59,42 +60,56 @@
         <div class="col-xs-12">
           <div class="form-group shadow-textarea">
 
-            <label for="exampleFormControlTextarea6" style="font-weight:bold"> 
-              Description 
+            <label for="exampleFormControlTextarea6" style="font-weight:bold">
+              Description
             </label>
 
-            <textarea style="resize:auto" class="form-control z-depth-1" 
-            id="exampleFormControlTextarea6" rows="3" 
-            placeholder="Write description here..."></textarea>
+            <textarea style="resize:auto" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write description here..."
+              formControlName="description"></textarea>
 
           </div>
         </div>
       </div>
 
 
-      <!-- Grid row -->
+      <!-- Grid row, formArrayName is directive-->
       <div class="container-fluid">
-        <div class="form-row">
+        <div class="col-xs-12" formArrayName="ingredients">
 
-          <!--  -->
-          <div class="form-group col-md-7">
-            <input type="text" class="form-control" id="name" 
-            placeholder="Name">
+          <label for="exampleFormControlTextarea6" style="font-weight:bold">
+            Ingredients
+          </label>
+
+          <div class="row" *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index" [formGroupName]="i">
+
+            <!--  -->
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+
+            <!--  -->
+            <div class="col-md-3">
+              <input type="number" class="form-control" id="amount" formControlName="amount" >
+            </div>
+
+            <!--  -->
+            <div class=" col-md-3">
+              <button type="button" class="btn btn-danger px-3 waves-light" mdbRippleRadius>
+                <i class="fa fa-close"></i>
+              </button>
+            </div>
+
           </div>
 
-          <!--  -->
-          <div class="form-group text col-md-2">
-            <input type="number" class="form-control" id="amount" 
-            placeholder="Amount">
+          <div class="container-fluid">
+            <div class="col-xs-12">
+              <button type="button" class="btn btn-success waves-light" mdbRippleRadius (click)="onAddIngredient()">
+                Add Ingredient
+              </button>
+            </div>
           </div>
-          <!--  -->
-          <div class="form-group col-md-3">
-            <button class="btn btn-danger waves-light" mdbRippleRadius>
-              <i class="fa fa-close"></i>
-            </button>
-          </div>
-
         </div>
+
       </div>
 
     </form>
