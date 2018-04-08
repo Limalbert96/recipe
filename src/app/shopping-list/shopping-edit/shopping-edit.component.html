@@ -1,7 +1,7 @@
 <br> 
 <!--Show shopping List form to add item to shopping list-->
 <div class="container-fluid">
-  <form>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <p class="h5 text-center mb-4">Shopping List</p>
 
     <!-- Name input in the shopping list form -->
@@ -9,40 +9,45 @@
       <input 
       type="text" 
       id="orangeForm-name" 
-      class="form-control" 
-      mdbActive
-      #nameInput>
+      class="form-control"
+      name="name" 
+      ngModel
+      required
+      mdbActive>
       <label for="orangeForm-name">Enter name</label>
     </div>
 
-    <!-- Amount input in the shopping list form -->
+    <!-- Amount input in the shopping list form, only input number -->
     <div class="md-form">
       <input 
       type="number" 
       id="orangeForm-email" 
       class="form-control" 
-      mdbActive
-      #amountInput>
+      name="amount"
+      ngModel
+      required
+      pattern="^[1-9]+[0-9]*$" 
+      mdbActive>
       <label for="orangeForm-email">Enter amount</label>
     </div>
 
     <!-- Add function in the shopping list form -->
+    <!-- Ternary checking is added to change the button label -->
     <div class="text-center">
-      <button type="submit" 
-      class="btn btn-success waves-light" mdbRippleRadius
-      (click)="onAddItem()"> 
-        Add 
+      <button type="submit" [disabled]="!f.valid"
+      class="btn btn-success waves-light" mdbRippleRadius> 
+        {{ editMode ? 'Update' : 'Add' }} 
       </button>
 
       <!-- Delete function in the shopping list form -->
-      <button type="button" 
+      <button type="button" (click)="onDelete()" *ngIf="editMode" 
       class="btn btn-danger waves-light" mdbRippleRadius> 
         Delete 
       </button>
 
       <!-- Clear function in the shopping list form -->
-      <button type="button" 
-      class="btn btn-primary waves-light" mdbRippleRadius> 
+      <button type="button" (click)="onClear()"
+      class="btn btn-primary waves-light" mdbRippleRadius > 
         Clear 
       </button>
     </div>
