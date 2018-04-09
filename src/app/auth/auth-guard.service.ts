@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
   }
 
   //prevent new and edit of recipes if not login
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  canActivate(_route: ActivatedRouteSnapshot, _state: RouterStateSnapshot) {
     return this.authService.isAuthenticated();
   }
 }
