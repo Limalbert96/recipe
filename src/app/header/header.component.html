@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
 
       <!-- Open the Recipes, and tab highlighted when clicked -->
-      <li routerLinkActive="active" class="nav-item" >
+      <li routerLinkActive="active" class="nav-item" *ngIf="authService.isAuthenticated()">
         <a routerLink="/recipes"
         class="nav-link waves-light" mdbRippleRadius> 
           Recipes
@@ -21,7 +21,7 @@
       </li>
 
       <!-- Open the Shopping List, and tab is highlighted when clicked -->
-      <li routerLinkActive="active" class="nav-item">
+      <li routerLinkActive="active" class="nav-item" *ngIf="authService.isAuthenticated()">
 
         <a routerLink="/shopping-list"
         class="nav-link waves-light" mdbRippleRadius> 
@@ -59,6 +59,7 @@
       <li routerLinkActive="active" class="nav-item" *ngIf="authService.isAuthenticated()">
           <a class="nav-link waves-light" (click)="onLogout()" mdbRippleRadius> 
             Logout
+            <span class="sr-only">(current)</span>
           </a>
       </li>
       
