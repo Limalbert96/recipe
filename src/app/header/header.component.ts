@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
-import { DataService } from "../shared/data.service";
 import { Response } from "@angular/http";
+
+import { DataService } from "../shared/data.service";
 import { AuthService } from "../auth/auth.service";
 
 @Component({
@@ -13,7 +14,7 @@ export class HeaderComponent {
 
   constructor(
     private dataService: DataService,
-    private authService: AuthService){
+    public authService: AuthService){
     }
 
   // save and send data to firebase
