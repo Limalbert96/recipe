@@ -10,7 +10,8 @@
           Save
         </button>
 
-        <button type="button" class="btn btn-danger waves-light" mdbRippleRadius>
+        <button type="button" class="btn btn-danger waves-light" mdbRippleRadius
+        (click)="onCancel()">
           Cancel
         </button>
 
@@ -27,7 +28,8 @@
               Name
             </label>
 
-            <input id="name" class="form-control z-depth-1" formControlName="name">
+            <input id="name" class="form-control z-depth-1" 
+            formControlName="name">
 
           </div>
         </div>
@@ -42,18 +44,24 @@
               Image URL
             </label>
 
-            <input id="imagePath" class="form-control z-depth-1" formControlName="imagePath">
+            <input id="imagePath" class="form-control z-depth-1" 
+            formControlName="imagePath" #imagePath>
 
           </div>
         </div>
       </div>
 
-      <!-- Image of recipe -->
+      <!-- Image preview of recipe -->
       <div class="container-fluid">
         <div class="col-xs-12">
-          <img src="" class="img-responsive">
+            <label style="font-weight:bold">
+                Image Preview
+              </label>
+          
+          <img [src]="imagePath.value" class="img-fluid">
         </div>
       </div>
+      <br>
 
       <!-- Description textarea -->
       <div class="container-fluid">
@@ -64,7 +72,9 @@
               Description
             </label>
 
-            <textarea style="resize:auto" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write description here..."
+            <textarea style="resize:auto" class="form-control z-depth-1" 
+            id="exampleFormControlTextarea6" rows="3" 
+            placeholder="Write description here..."
               formControlName="description"></textarea>
 
           </div>
@@ -80,21 +90,29 @@
             Ingredients
           </label>
 
-          <div class="row" *ngFor="let ingredientCtrl of recipeForm.get('ingredients')['controls']; let i = index" [formGroupName]="i">
+          <div class="row" 
+          *ngFor="let ingredientCtrl of recipeForm.get('ingredients')['controls']; 
+          let i = index" [formGroupName]="i">
 
             <!--  -->
             <div class="col-md-6">
-              <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingredient Name">
+              <input type="text" class="form-control" id="name" 
+              formControlName="name" placeholder="Ingredient Name">
             </div>
 
             <!--  -->
             <div class="col-md-3">
-              <input type="number" class="form-control" id="amount" formControlName="amount" placeholder="Amount">
+              <input type="number" class="form-control" id="amount" 
+              formControlName="amount" placeholder="Amount">
             </div>
 
             <!--  -->
             <div class=" col-md-3">
-              <button type="button" class="btn btn-danger px-3 waves-light" mdbRippleRadius>
+              <button 
+                type="button" 
+                class="btn btn-danger px-3 waves-light" 
+                mdbRippleRadius
+                (click)="onDeleteIngredient(i)">
                 <i class="fa fa-close"></i>
               </button>
             </div>
@@ -103,7 +121,8 @@
 
           <div class="container-fluid">
             <div class="col-xs-12">
-              <button type="button" class="btn btn-success waves-light" mdbRippleRadius (click)="onAddIngredient()">
+              <button type="button" class="btn btn-success waves-light" 
+              mdbRippleRadius (click)="onAddIngredient()">
                 Add Ingredient
               </button>
             </div>

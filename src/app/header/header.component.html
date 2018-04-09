@@ -8,7 +8,6 @@
 
   <!-- Collapsible content -->
   <links>
-
     
     <ul class="navbar-nav mr-auto">
 
@@ -35,8 +34,36 @@
 
     <!-- Manage dropdown -->
     <ul class="navbar-nav">
+
+      <ng-template [ngIf]="!authService.isAuthenticated()">
+        <!-- Open the Register, and tab highlighted when clicked -->
+        <li routerLinkActive="active" class="nav-item">
+          <a routerLink="/signup"
+          class="nav-link waves-light" mdbRippleRadius> 
+            Register
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+
+        <!-- Open the Login, and tab highlighted when clicked -->
+        <li routerLinkActive="active" class="nav-item">
+          <a routerLink="/signin"
+          class="nav-link waves-light" mdbRippleRadius> 
+            Login
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ng-template>
+
+      <!-- To logout -->
+      <li routerLinkActive="active" class="nav-item" *ngIf="authService.isAuthenticated()">
+          <a class="nav-link waves-light" (click)="onLogout()" mdbRippleRadius> 
+            Logout
+          </a>
+      </li>
+      
       <!-- Dropdown -->
-      <li class="nav-item dropdown" dropdown>
+      <li class="nav-item dropdown" dropdown *ngIf="authService.isAuthenticated()">
         <a dropdownToggle mdbRippleRadius type="button" 
         class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
           Manage
@@ -44,8 +71,15 @@
         </a>
         
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item" mdbRippleRadius> Save Data </a>
-          <a class="dropdown-item" mdbRippleRadius> Fetch Data </a>
+          <a class="dropdown-item" mdbRippleRadius
+          (click)="onSaveData()"> 
+            Save Data 
+          </a>
+
+          <a class="dropdown-item" mdbRippleRadius (click)="onFetchData()"> 
+            Fetch Data 
+          </a>
+
         </div>
       </li>
     </ul>
