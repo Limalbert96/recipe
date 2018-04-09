@@ -14,7 +14,7 @@ export class HeaderComponent {
 
   constructor(
     private dataService: DataService,
-    public authService: AuthService){
+    private authService: AuthService){
     }
 
   // save and send data to firebase
