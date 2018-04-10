@@ -8,19 +8,19 @@ export class ToasterService {
   constructor() { }
 
   Success(title: String, message ?: String){
-    toastr.success(title, message);
+    toastr.success(message, title);
   }
 
   Warning(title: String, message ?: String){
-    toastr.success(title, message);
+    toastr.warning(message, title);
   }
 
   Error(title: String, message ?: String){
-    toastr.success(title, message);
+    toastr.error(message, title);
   }
 
   Info(message ?: String){
-    toastr.success( message);
+    toastr.info( message);
   }
 
 
