@@ -24,7 +24,7 @@ export class AuthService{
                 this.errMsg = null;
                 this.successMsg = response;
                 console.log(this.successMsg);
-                this.toasterService.Success("Success", this.getSuccessMsg());
+                this.toasterService.Success("Success", "Successfully signup!");
             }
         )
         .catch(
@@ -59,7 +59,7 @@ export class AuthService{
                 this.errMsg = null;
                 this.successMsg = _response;
                 console.log(this.successMsg);
-                this.toasterService.Success("Success", this.getSuccessMsg());
+                this.toasterService.Success("Success", "Successfully login!");
             }
             
         )
