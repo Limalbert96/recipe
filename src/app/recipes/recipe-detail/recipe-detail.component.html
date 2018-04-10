@@ -1,3 +1,5 @@
+
+
 <!-- Recipe details show picture-->
 <div class="container-fluid">
   <div class="col-xs-12">
@@ -23,14 +25,14 @@
           Manage Recipe
         </button>
     
-        <div class="dropdown-menu dropdown-primary">
-            <a class="dropdown-item" 
-            (click)="onAddToSL()">
-              To Shopping List
-            </a>
+        <div class="dropdown-menu dropdown-primary">        
+          <a class="dropdown-item"  
+          (click)="onAddToSL()" id="alert-target">
+            Add to Shopping List
+          </a>
 
-            <a class="dropdown-item" (click)="onEditRecipe()"> Edit Recipe </a>
-            <a class="dropdown-item" (click)="onDeleteRecipe()"> Delete Recipe </a>
+          <a class="dropdown-item" (click)="onEditRecipe()"> Edit Recipe </a>
+          <a class="dropdown-item" (click)="onDeleteRecipe()"> Delete Recipe </a>
         </div>
     </div></center>
   </div>

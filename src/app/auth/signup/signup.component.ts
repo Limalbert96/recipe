@@ -20,8 +20,8 @@ export class SignupComponent implements OnInit {
     const password = form.value.password;
 
     //test input
-    const all = form.value;
-    console.log(all);
+    //const all = form.value;
+    //console.log(all);
 
     this.authService.signupUser(email, password);
 

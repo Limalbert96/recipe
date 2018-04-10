@@ -20,6 +20,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/font-awesome/scss/font-awesome.scss",
+        "../node_modules/toastr/build/toastr.min.css",
         "../scss/bootstrap/bootstrap.scss",
         "../scss/mdb-free.scss",
         "./styles.scss"
@@ -28,7 +29,9 @@
         "../node_modules/chart.js/dist/Chart.js",
         "../node_modules/easy-pie-chart/dist/easypiechart.js",
         "../node_modules/screenfull/dist/screenfull.js",
-        "../node_modules/hammerjs/hammer.min.js"
+        "../node_modules/hammerjs/hammer.min.js",
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/toastr/build/toastr.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

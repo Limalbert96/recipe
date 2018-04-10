@@ -25,6 +25,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { HomeComponent } from './home/home.component';
+import { ToasterService } from './toaster.service';
 
 
 @NgModule({
@@ -58,7 +59,7 @@ import { HomeComponent } from './home/home.component';
     })
   ],
 
-  providers: [ShoppingListService, RecipeService, DataService, AuthService, AuthGuard],
+  providers: [ShoppingListService, RecipeService, DataService, AuthService, AuthGuard, ToasterService],
   bootstrap: [AppComponent],
   schemas:   [ NO_ERRORS_SCHEMA ]
 })
