@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { FormGroup, FormControl, FormArray, Validators } from "@angular/forms";
 import { RecipeService } from "../recipe.service";
+import { ToasterService } from "../../toaster.service";
 
 
 @Component({
@@ -17,7 +18,8 @@ export class RecipeEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private recipeService: RecipeService,
-    private router: Router // injected to navigate
+    private router: Router, // injected to navigate,
+    private toasterService: ToasterService
   ) {
     // inject recipeName
   }
@@ -46,8 +48,10 @@ export class RecipeEditComponent implements OnInit {
 
     if (this.editMode) {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
+      this.toasterService.Success("Success", "Successfully update recipe!");
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
+      this.toasterService.Success("Success", "Successfully save new recipe!");
     }
 
     // to go back to recipe home after save is clicked
